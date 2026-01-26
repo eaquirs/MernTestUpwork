@@ -1,3 +1,126 @@
+# MERN Task Management System
+
+A full-stack task management application built with MongoDB, Express, React, and Node.js (MERN). This project was completed as part of a technical assessment.
+
+## 🚀 Features
+
+### Core Functionality
+- **Task Management**: Create, Read, Update, and Delete (CRUD) tasks.
+- **Task Properties**: Title, Description, Status (Pending/In-Progress/Completed), Priority (Low/Medium/High), Due Date.
+- **Advanced Filtering**: Filter tasks by Status and Priority.
+- **Sorting (Option C)**: Sort tasks by:
+  - **Due Date** (Ascending/Descending)
+  - **Priority** (High-Low/Low-High)
+  - **Created Date** (Newest/Oldest)
+- **Responsive Design**: Mobile-friendly UI using CSS Variables, Flexbox, and Grid.
+- **Date Picker**: Integrated `react-datepicker` for intuitive date selection.
+
+### Technical Highlights
+- **Backend**:
+  - RESTful API with Express.js
+  - MongoDB integration via Mongoose
+  - Global Error Handling Middleware
+  - Request Validation (Schema & Enums)
+  - **Auto-Seeding**: Database automatically populates with 30 sample tasks if empty.
+  - Strict Environment Variable configuration.
+- **Frontend**:
+  - Built with **Vite** + **React** + **TypeScript**.
+  - Custom `useTasks` hook for state management.
+  - Centralized API service with Axios.
+  - Strict Type Safety with TypeScript interfaces.
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- MongoDB (local installation or MongoDB Atlas URI)
+
+### 1. Backend Setup
+
+```bash
+# Navigate to backend
+cd backend
+
+# Install dependencies
+npm install
+
+# Configure Environment Variables
+cp .env.example .env
+# Edit .env if needed (Default: PORT=5000, MONGODB_URI=mongodb://localhost:27017/task-manager)
+
+# Start Development Server
+npm run dev
+```
+*The server will start on port 5000. On first run, it will seed the database with sample data.*
+
+### 2. Frontend Setup
+
+```bash
+# Navigate to frontend
+cd frontend
+
+# Install dependencies
+npm install
+
+# Configure Environment Variables
+cp .env.example .env
+# Default: VITE_API_URL=http://localhost:5000/api
+
+# Start Development Server
+npm run dev
+```
+
+### 3. Access the Application
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🔮 Future Improvements
+
+Given more time, I would implement:
+1.  **Authentication & Authorization**: JWT-based user login to support private task lists.
+2.  **Pagination**: Server-side pagination to handle large datasets efficiently.
+3.  **Drag & Drop**: Kanban-style board view for managing task status.
+4.  **Testing**:
+    -   Backend: Unit tests with Jest/Supertest.
+    -   Frontend: Component tests with Vitest & React Testing Library.
+5.  **CI/CD**: GitHub Actions workflow for automated linting and testing.
+6.  **Accessibility**: Full ARIA compliance audit and keyboard navigation improvements.
+
+---
+
+## 📂 Project Structure
+
+```
+MERN-assessment/
+├── backend/
+│   ├── src/
+│   │   ├── config/         # DB Connection
+│   │   ├── controllers/    # Request handlers
+│   │   ├── middleware/     # Error handling & validation
+│   │   ├── models/         # Mongoose schemas
+│   │   ├── routes/         # API routes
+│   │   ├── scripts/        # Seeding logic
+│   │   └── services/       # Business logic
+│   └── .env.example
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── context/        # Global state (if applicable)
+│   │   ├── hooks/          # Custom hooks (useTasks)
+│   │   ├── services/       # API integration
+│   │   └── types/          # TypeScript interfaces
+│   └── .env.example
+└── README.md
+```
+
+---
+<!-- Original Assessment Instructions below for reference -->
+<details>
+<summary><strong>Original Assessment Instructions</strong></summary>
+
 # MERN Stack Developer Assessment
 
 Welcome to the MERN Stack Developer Assessment! This assessment is designed to evaluate your skills in building full-stack web applications using MongoDB, Express, React, and Node.js.
@@ -84,79 +207,13 @@ Choose and implement ONE of the following:
   - Total number of tasks
   - Tasks by status (count)
   - Tasks by priority (count)
-- Display this data in a visually appealing way (charts or cards)
+  - Display this data in a visually appealing way (charts or cards)
 
 **Option C: Task Sorting**
 - Add ability to sort tasks by:
   - Due date (ascending/descending)
   - Priority (high to low)
   - Created date (newest/oldest)
-
-## Getting Started
-
-### Prerequisites
-- Node.js (v18 or higher)
-- MongoDB (local installation or MongoDB Atlas account)
-- Git
-- Code editor (VS Code recommended)
-
-### Setup Instructions
-
-1. **Clone this repository**
-   ```bash
-   git clone <repository-url>
-   cd MERN-assessment
-   ```
-
-2. **Backend Setup**
-   ```bash
-   cd backend
-   npm install
-   cp env.example .env
-   # Edit .env with your MongoDB connection string
-   npm run dev
-   ```
-   
-   **Note:** The database will be automatically seeded with 30 sample tasks on first startup if the database is empty.
-
-3. **Frontend Setup**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-4. **MongoDB Setup**
-   - Option 1: Use MongoDB Atlas (free tier)
-   - Option 2: Install MongoDB locally
-   - Update the connection string in `backend/.env`
-
-## Project Structure
-
-```
-MERN-assessment/
-├── README.md
-├── backend/
-│   ├── src/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── config/
-│   │   └── server.js
-│   ├── package.json
-│   └── .env.example
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── types/
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   ├── package.json
-│   └── vite.config.ts
-└── .gitignore
-```
 
 ## Evaluation Criteria
 
@@ -202,17 +259,4 @@ Your submission will be evaluated based on:
    - Any challenges you faced
    - What you would improve given more time
 
-## Tips
-
-- Start with the backend API first, then move to the frontend
-- Test your API endpoints using Postman or similar tools
-- Don't worry about perfect styling - focus on functionality
-- Use TypeScript types consistently
-- Handle edge cases and errors gracefully
-- Write clean, maintainable code
-
-## Questions?
-
-If you have any questions about the assessment, please reach out to the hiring team.
-
-Good luck! 🚀
+</details>
