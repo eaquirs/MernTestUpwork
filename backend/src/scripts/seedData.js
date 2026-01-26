@@ -211,49 +211,6 @@ export const mockTasks = [
     status: 'pending',
     priority: 'low',
     dueDate: new Date(Date.now() + 22 * 24 * 60 * 60 * 1000) // 22 days from now
-  },
-  {
-    title: 'Setup automated testing',
-    description: 'Configure end-to-end testing with Cypress or Playwright.',
-    status: 'completed',
-    priority: 'medium'
-    // No dueDate for completed tasks
-  },
-  {
-    title: 'Implement real-time updates',
-    description: 'Add WebSocket support for real-time data updates.',
-    status: 'in-progress',
-    priority: 'high',
-    dueDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000) // 4 days from now
-  },
-  {
-    title: 'Add task reminders',
-    description: 'Implement reminder system for upcoming task due dates.',
-    status: 'pending',
-    priority: 'medium',
-    // No dueDate - testing optional field
-  },
-  {
-    title: 'Create user profile page',
-    description: 'Build user profile management interface with avatar upload.',
-    status: 'pending',
-    priority: 'low',
-    dueDate: new Date(Date.now() + 19 * 24 * 60 * 60 * 1000) // 19 days from now
-  },
-  {
-    title: 'Fix CORS issues',
-    description: 'Resolve cross-origin resource sharing configuration problems.',
-    status: 'completed',
-    priority: 'high'
-    // No dueDate for completed tasks
-  },
-  {
-    title: 'Add task templates',
-    description: 'Create reusable task templates for common workflows.',
-    status: 'pending',
-    priority: 'low',
-    // No description - testing optional field
-    dueDate: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000) // 21 days from now
   }
 ];
 
